@@ -71,7 +71,7 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
             chargeVector.Normalize();
             rb.velocity = chargeVector * chargeVelocity;
             yield return new WaitUntil(() => rb.velocity.x.Equals(0) | rb.velocity.y.Equals(0) | rb.velocity.magnitude < minVelocity); // Wait until the boss hits a wall
-        } while (Random.value < .6f); // 60% chance to bounce and charge towards Ruby again
+        } while (Random.value < .5f); // 40% chance to bounce and charge towards Ruby again
 
         rb.velocity = Vector2.zero; // Stop moving
         yield return new WaitForSeconds(crashStun); // Be stunned for a bit
